@@ -1,8 +1,10 @@
+`include "nand.sv"
 // in out
 // 0  1
 // 1  0
-module Not (input in,
-                 output out);
-   Nand nand1(.a(in), .b(in), .out(out));
+module Not (
+  input IN,
+  output OUT);
+   Nand nand1(.A(IN), .B(IN), .OUT(OUT));
 endmodule // Not
 
