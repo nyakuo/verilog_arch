@@ -6,5 +6,5 @@
 module Nand (input a, b,
                   output out);
    assign out = ~(a & b);
-endmodule // nand_gate
+endmodule // Nand
 
