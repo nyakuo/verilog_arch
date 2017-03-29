@@ -1,12 +1,25 @@
-module Or8way (input [7:0] in,
-               output out);
-   wire [5:0]         tmp;
+`include "or.sv"
 
-   Or or0 (.a(in[0]), .b(in[1]), .out(tmp[0]));
-   Or or1 (.a(in[2]), .b(in[3]), .out(tmp[1]));
-   Or or2 (.a(in[4]), .b(in[5]), .out(tmp[2]));
-   Or or3 (.a(in[6]), .b(in[7]), .out(tmp[3]));
-   Or or4 (.a(tmp[0]), .b(tmp[1]), .out(tmp[4]));
-   Or or5 (.a(tmp[2]), .b(tmp[3]), .out(tmp[5]));
-   Or or6 (.a(tmp[4]), .b(tmp[5]), .out(out));
+`ifndef __OR8WAY__
+  `define __OR8WAY__
+module Or8way (
+  input [7:0] IN,
+  output OUT
+);
+  wire [5:0] tmp;
+
+  generate
+    genvar i;
+    for (i=0; i<4; i=i+1) begin
+      Or or0(.A(IN[i<<1]), .B(IN[(i<<1)+1]), .OUT(tmp[i]));
+    end
+
+    for (i=0; i<2; i=i+1) begin
+      Or or1(.A(tmp[i<<1]), .B(tmp[(i<<1)+1]), .OUT(tmp[4+i]));
+    end
+
+    Or or_last(.A(tmp[4]), .B(tmp[5]), .OUT(OUT));
+  endgenerate
+
 endmodule // or8way
+`endif
