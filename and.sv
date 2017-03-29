@@ -1,12 +1,13 @@
+`include "nand.sv"
+`include "not.sv"
 // a, b out
 // 0  0 0
 // 0  1 0
 // 1  0 0
 // 1  1 1
-module And (input a, b,
-                 output out);
+module And (input A, B,
+                 output OUT);
    wire                 tmp;
-   nand_gate nand_1(a, b, tmp);
-   not_gate not_1(tmp, out);
-endmodule // and_gate
-
+   Nand nand_1(A, B, tmp);
+   Not not_1(tmp, OUT);
+endmodule // And
