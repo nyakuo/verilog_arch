@@ -4,6 +4,8 @@ module TestOr();
   reg a, b;
   wire out;
 
+  Or or1(.A(a), .B(b), .OUT(out));
+
   localparam STEP = 50;
   initial begin
     $monitor($time, " a=%b b=%b out=%b", a, b, out);
