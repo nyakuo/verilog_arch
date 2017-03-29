@@ -1,3 +1,5 @@
+`ifndef __NOT__
+  `define __NOT__
 `include "nand.sv"
 // in out
 // 0  1
@@ -7,4 +9,4 @@ module Not (
   output OUT);
    Nand nand1(.A(IN), .B(IN), .OUT(OUT));
 endmodule // Not
-
+`endif
