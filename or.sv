@@ -1,8 +1,9 @@
+`include "not.sv"
+`include "and.sv"
+
 `ifndef __OR__
   `define __OR__
 `endif
-`include "not.sv"
-`include "and.sv"
 // a, b out
 // 0  0 0
 // 0  1 1
