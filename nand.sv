@@ -3,8 +3,9 @@
 // 0  1 1
 // 1  0 1
 // 1  1 0
-module Nand (input a, b,
-                  output out);
-   assign out = ~(a & b);
+module Nand (
+  input A, B,
+  output OUT);
+   assign OUT = ~(A & B);
 endmodule // Nand
 
