@@ -1,3 +1,6 @@
+`ifndef __OR__
+  `define __OR__
+`endif
 `include "not.sv"
 `include "and.sv"
 // a, b out
@@ -6,12 +9,12 @@
 // 1  0 1
 // 1  1 1
 module Or(
-    input a, b,
-    output out);
-  wire                not_a, not_b, tmp;
+    input A, B,
+    output OUT);
+  wire not_a, not_b, tmp;
 
-  Not not_1(a, not_a);
-  Not not_2(b, not_b);
+  Not not_1(A, not_a);
+  Not not_2(B, not_b);
   And and_1(not_a, not_b, tmp);
-  Not not_3(tmp, out);
+  Not not_3(tmp, OUT);
 endmodule // Or
