@@ -1,6 +1,7 @@
+`include "and.sv"
+
 `ifndef __AND16__
   `define __AND16__
-`include "and.sv"
 // 16bit and
 module And16 (
   input [15:0] A, B,
