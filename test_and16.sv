@@ -9,11 +9,13 @@ module TestAnd16();
 
   localparam STEP = 50;
   reg [16:0] i, k;
+
   initial begin
     $monitor($time, " a=%16b b=%16b out=%16b", a, b, out);
+
     for (i=0; i<=16'hffff; i=i+1) begin
       a=i;
-      b=16'h00;
+      b=16'h0000;
       for (k=0; k<=16'hffff; k=k+1) begin
         #STEP b=k;
       end
