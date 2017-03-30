@@ -1,3 +1,5 @@
+`ifndef __DMUX8WAY__
+`define __DMUX8WAY__
 module Dmux8way (
   input A, B, C, D, E, F, G, H,
   input [2:0] SEL,
@@ -13,3 +15,4 @@ module Dmux8way (
    : (SEL == 3'b111) ? H
    : 1'bx;
  endmodule
+ `endif
