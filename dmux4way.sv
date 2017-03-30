@@ -1,9 +1,13 @@
-module Dmux4way (input a, b, c, d,
-                 input [1:0] sel,
-                 output      out);
-   assign out = (sel == 2'b00) ? a
-                : (sel == 2'b01) ? b
-                : (sel == 2'b10) ? c
-                : (sel == 2'b11) ? d
-                : 1'bx;
+`ifndef __DMUX4WAY__
+`define __DMUX4WAY__
+module Dmux4way (
+  input A, B, C, D,
+  input [1:0] SEL,
+  output      OUT);
+   assign OUT = (SEL == 2'b00) ? A
+   : (SEL == 2'B01) ? B
+   : (SEL == 2'B10) ? C
+   : (SEL == 2'B11) ? D
+   : 1'bx;
 endmodule // dmux4way
+`endif
