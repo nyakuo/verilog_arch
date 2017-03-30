@@ -1,13 +1,15 @@
-module Dmux8way (input a, b, c, d, e, f, g, h,
-                 input [2:0] sel,
-                 output      out);
-   assign out = (sel == 3'b000) ? a
-                : (sel == 3'b001) ? b
-                : (sel == 3'b010) ? c
-                : (sel == 3'b011) ? d
-                : (sel == 3'b100) ? e
-                : (sel == 3'b101) ? f
-                : (sel == 3'b110) ? g
-                : (sel == 3'b111) ? h
-                : 1'bx;
-endmodule
+module Dmux8way (
+  input A, B, C, D, E, F, G, H,
+  input [2:0] SEL,
+  output OUT
+);
+   assign OUT = (SEL == 3'b000) ? A
+   : (SEL == 3'b001) ? B
+   : (SEL == 3'b010) ? C
+   : (SEL == 3'b011) ? D
+   : (SEL == 3'b100) ? E
+   : (SEL == 3'b101) ? F
+   : (SEL == 3'b110) ? G
+   : (SEL == 3'b111) ? H
+   : 1'bx;
+ endmodule
