@@ -7,7 +7,6 @@ module TestAnd ();
   And and1(.A(a), .B(b), .OUT(out));
 
   localparam STEP = 50;
-
   initial begin
     $monitor($time, " a=%b b=%b out=%b", a, b, out);
     a = 0; b = 0;

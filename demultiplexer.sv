@@ -1,5 +1,5 @@
 `ifndef __DEMULTIPLEXER__
-  `define __DEMULTIPLEXER__
+`define __DEMULTIPLEXER__
 `include "not.sv"
 `include "and.sv"
 //module Demultiplexer(
