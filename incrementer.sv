@@ -1,15 +1,12 @@
+`ifndef __INC16__
+`define __INC16__
 module Inc16(
-  input wire [15:0] in,
-  output wire [15:0] out
+  input wire [15:0] IN,
+  output wire [15:0] OUT
 );
-
   wire c;
-  Add16 add16(.A(in), .B(16'b1), .S(out), .C(c));
-  assign out = (c == 1'b1) ? 16'b0 :;
+  Add16 add16(.A(IN), .B(16'h0001), .S(OUT), .C(c));
+  assign OUT = (c == 1'b1) ? 16'h0000 : OUT;
 
 endmodule
-
-
-module TestIncrementer();
-  reg [15:0j
-  Incrementer inc(.in(), .out());
+`endif
