@@ -9,8 +9,8 @@ module TestDmux4way();
   localparam STEP = 50;
   integer i;
   initial begin
-    $monitor($time, " a=%b b=%b c=%b d=%b set=%2b out=%b", a, b, c, d, sel, out);
-    for (i=0; i<6'h3f; i=i+1) begin
+    $monitor($time, " a=%b b=%b c=%b d=%b sel=%2b out=%b", a, b, c, d, sel, out);
+    for (i=0; i<7'h40; i=i+1) begin
       #STEP {a, b, c, d, sel} = i;
     end
     $finish;
