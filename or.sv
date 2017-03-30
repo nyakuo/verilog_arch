@@ -2,8 +2,7 @@
 `include "and.sv"
 
 `ifndef __OR__
-  `define __OR__
-`endif
+`define __OR__
 // a, b out
 // 0  0 0
 // 0  1 1
@@ -19,3 +18,4 @@ module Or(
   And and_1(not_a, not_b, tmp);
   Not not_3(tmp, OUT);
 endmodule // Or
+`endif
