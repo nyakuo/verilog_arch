@@ -1,10 +1,10 @@
 `include "or.sv"
-// Orのテストベンチ
-module TestOr();
+// MyOrのテストベンチ
+module TestMyOr;
   reg a, b;
   wire out;
 
-  Or or1(.A(a), .B(b), .OUT(out));
+  MyOr or1(.A(a), .B(b), .OUT(out));
 
   localparam STEP = 50;
   initial begin

@@ -20,7 +20,7 @@ module FullAdder(
   HalfAdder ha1(.A(A), .B(B), .S(tmp), .C(C1));
   HalfAdder ha2(.A(X), .B(tmp), .S(S), .C(C2));
 
-  Or or1(.A(C1), .B(C2), .OUT(C));
+  MyOr or1(.A(C1), .B(C2), .OUT(C));
 endmodule
 // A B S X C1 C2
 // 1 1 0 0 1  0

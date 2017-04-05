@@ -16,10 +16,10 @@ module Multiplexer(
   output OUT);
   wire not_sel, preout_a, preout_b;
 
-  Not not1(.IN(SEL), .OUT(not_sel));
-  And and1(.A(A), .B(not_sel), .OUT(preout_a));
-  And and2(.A(B), .B(SEL), .OUT(preout_b));
-  Or or1(.A(preout_a), .B(preout_b), .OUT(OUT));
+  MyNot not1(.IN(SEL), .OUT(not_sel));
+  MyAnd and1(.A(A), .B(not_sel), .OUT(preout_a));
+  MyAnd and2(.A(B), .B(SEL), .OUT(preout_b));
+  MyOr or1(.A(preout_a), .B(preout_b), .OUT(OUT));
 endmodule
 
 //module Multiplexer(

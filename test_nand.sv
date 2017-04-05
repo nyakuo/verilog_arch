@@ -1,9 +1,9 @@
 `include "nand.sv"
-module TestNand();
+module TestMyNand();
   reg a, b;
   wire out;
 
-  Nand nand1(.A(a), .B(b), .OUT(out));
+  MyNand nand1(.A(a), .B(b), .OUT(out));
 
   localparam STEP = 50;
   initial begin

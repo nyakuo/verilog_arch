@@ -5,9 +5,9 @@
 // 0  1 1
 // 1  0 1
 // 1  1 0
-module Nand (
+module MyNand (
   input A, B,
   output OUT);
    assign OUT = ~(A & B);
-endmodule // Nand
+endmodule // MyNand
 `endif

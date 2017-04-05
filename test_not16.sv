@@ -1,10 +1,10 @@
 `include "not16.sv"
-// Not16のテストベンチ
-module TestNot16();
+// MyNot16のテストベンチ
+module TestMyNot16();
   reg [15:0] in;
   wire [15:0] out;
 
-  Not16 not16(.IN(in), .OUT(out));
+  MyNot16 not16(.IN(in), .OUT(out));
 
   localparam STEP = 50;
 

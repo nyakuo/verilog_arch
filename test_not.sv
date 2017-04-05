@@ -1,10 +1,10 @@
 `include "not.sv"
-// Notのテストベンチ
-module TestNot();
+// MyNotのテストベンチ
+module TestMyNot();
   reg in;
   wire out;
 
-  Not not1(.IN(in), .OUT(out));
+  MyNot not1(.IN(in), .OUT(out));
 
   localparam STEP = 50;
   initial begin

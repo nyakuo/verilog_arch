@@ -1,10 +1,10 @@
 `include "and.sv"
-// Andのテストベンチ
-module TestAnd ();
+// MyAndのテストベンチ
+module TestMyAnd ();
   reg a, b;
   wire out;
 
-  And and1(.A(a), .B(b), .OUT(out));
+  MyAnd and1(.A(a), .B(b), .OUT(out));
 
   localparam STEP = 50;
   initial begin

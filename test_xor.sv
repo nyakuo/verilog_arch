@@ -1,9 +1,9 @@
 `include "xor.sv"
-module TestXor();
+module TestMyXor();
   reg a, b;
   wire out;
 
-  Xor xor1(.A(a), .B(b), .OUT(out));
+  MyXor xor1(.A(a), .B(b), .OUT(out));
 
   localparam STEP = 50;
 

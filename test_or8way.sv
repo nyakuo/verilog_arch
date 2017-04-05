@@ -1,9 +1,9 @@
 `include "or8way.sv"
-module TestOr8way();
+module TestMyOr8way();
   reg [7:0] in;
   wire out;
 
-  Or8way or8way(.IN(in), .OUT(out));
+  MyOr8way or8way(.IN(in), .OUT(out));
 
   localparam STEP = 50;
 

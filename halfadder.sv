@@ -6,7 +6,7 @@ module HalfAdder(
   input wire A, B,
   output wire S, C
 );
-  And and1(.A(A), .B(B), .OUT(C));
-  Xor xor1(.A(A), .B(B), .OUT(S));
+  MyAnd and1(.A(A), .B(B), .OUT(C));
+  MyXor xor1(.A(A), .B(B), .OUT(S));
 endmodule
 `endif

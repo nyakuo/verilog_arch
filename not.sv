@@ -5,9 +5,9 @@
 // in out
 // 0  1
 // 1  0
-module Not (
+module MyNot (
   input IN,
   output OUT);
-   Nand nand1(.A(IN), .B(IN), .OUT(OUT));
-endmodule // Not
+   MyNand nand1(.A(IN), .B(IN), .OUT(OUT));
+endmodule // MyNot
 `endif

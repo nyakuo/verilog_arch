@@ -1,21 +1,20 @@
-`include "not.sv"
-`include "and.sv"
-
 `ifndef __OR__
 `define __OR__
+`include "not.sv"
+`include "and.sv"
 // a, b out
 // 0  0 0
 // 0  1 1
 // 1  0 1
 // 1  1 1
-module Or(
+module MyOr(
     input A, B,
     output OUT);
   wire not_a, not_b, tmp;
 
-  Not not_1(A, not_a);
-  Not not_2(B, not_b);
-  And and_1(not_a, not_b, tmp);
-  Not not_3(tmp, OUT);
-endmodule // Or
+  MyNot not_1(A, not_a);
+  MyNot not_2(B, not_b);
+  MyAnd and_1(not_a, not_b, tmp);
+  MyNot not_3(tmp, OUT);
+endmodule // MyOr
 `endif

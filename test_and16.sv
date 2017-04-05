@@ -1,11 +1,11 @@
 `include "and16.sv"
-// And16のテストベンチ
-module TestAnd16();
+// MyAnd16のテストベンチ
+module TestMyAnd16();
   reg [15:0] a, b;
   wire [15:0] out;
 
 
-  And16 a16(.A(a), .B(b), .OUT(out));
+  MyAnd16 a16(.A(a), .B(b), .OUT(out));
 
   localparam STEP = 50;
   reg [16:0] i, k;

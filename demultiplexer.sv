@@ -31,8 +31,8 @@ module Demultiplexer(
 );
   wire tmp;
 
-  Not not1(.IN(SEL), .OUT(tmp));
-  And and1(.A(IN), .B(tmp), .OUT(A));
-  And and2(.A(IN), .B(SEL), .OUT(B));
+  MyNot not1(.IN(SEL), .OUT(tmp));
+  MyAnd and1(.A(IN), .B(tmp), .OUT(A));
+  MyAnd and2(.A(IN), .B(SEL), .OUT(B));
 endmodule // demultiplexer
 `endif
