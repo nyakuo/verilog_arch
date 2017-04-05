@@ -1,6 +1,6 @@
 `include "add16.sv"
 // Add16のテストベンチ
-module TestAdd16();
+module TestAdd16;
   reg [15:0] a, b;
   wire [15:0] s;
   wire c;
