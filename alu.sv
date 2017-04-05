@@ -1,22 +1,25 @@
+`ifndef __ALU__
+`define __ALU__
 module ALU(
-  input [15:0] X, Y,
-  input ZX, // 入力Xをゼロに
-  input ZY, // 入力Yをゼロに
-  input NX, // 入力Xを反転
-  input NY, // 入力Yを反転
-  input F,  // 関数コード: if 1 then ADD elseif 0 AND
-  input NO, // 出力OUtを反転
-  output [15:0] OUT,
-  output [15:0] NG,  // ~OUT
-  output ZR // OUT==0
+  input [15:0] x, y,
+  input zx, // 入力xをゼロに
+  input zy, // 入力yをゼロに
+  input nx, // 入力xを反転
+  input ny, // 入力yを反転
+  input f,  // 関数コード: if 1 then add elseif 0 and
+  input no, // 出力outを反転
+  output [15:0] out,
+  output [15:0] ng,  // ~out
+  output zr // out==0
 );
   wire [15:0] tmp_x, tmp_y;
 
-  assign tmp_x = (NX==1'b1) ? ~X
-    : (ZX==1'b1) ? 16'h0000 : X;
-  assign tmp_y = (NY==1'b1) ? ~Y
-    : (ZY==1'b1) ? 16'h0000 : Y;
-  assign OUT = (F==1'b1) ? tmp_x + tmp_y : tmp_x & tmp_y;
-  assign NG = ~OUT;
-  assign ZR = (OUT == 16'h0000);
+  assign tmp_x = (nx==1'b1) ? ~x
+    : (zx==1'b1) ? 16'h0000 : x;
+  assign tmp_y = (ny==1'b1) ? ~y
+    : (zy==1'b1) ? 16'h0000 : y;
+  assign out = (f==1'b1) ? tmp_x + tmp_y : tmp_x & tmp_y;
+  assign ng = ~out;
+  assign zr = (out == 16'h0000);
 endmodule
+`endif
